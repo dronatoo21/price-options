@@ -14,15 +14,15 @@ const Navbar = () => {
 
 
     return (
-        <nav>
-            <div className="md:hidden" onClick={()=> setOpen(!open)}>
+        <nav className="p-6">
+            <div className="md:hidden bg-orange-300 " onClick={()=> setOpen(!open)}>
                 {
                     open === true ? <HiX className="text-2xl"/> : <HiMenuAlt1 className="text-2xl"/> 
                 }
                    
             </div>
             
-            <ul className="md:flex md:hidden">
+            <ul className={`md:flex absolute pr-3 md:static bg-orange-300 duration-1000 ${open? 'top-12' : '-top-60'}`}>
                 {
                     routes.map(route => <Link  key={route.id} route={route}/>)
                 }
